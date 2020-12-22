@@ -1,0 +1,427 @@
+/*
+* Project Name: Github Profile -
+* Author: Lee Mandell
+*/
+
+/*
+Table of Contents
+  =01 Reset/Global Defaults
+  =02 Typography
+  =03 Nav
+  =04 Layout
+*/
+
+/***** =01 Reset/Global Defaults *****/
+
+/* Global vars */
+:root {
+	--clr-text-primary: #222;
+	--clr-secondary-dark: #666;
+}
+
+/*
+	This reset is based on: https://hankchizljaw.com/wrote/a-modern-css-reset/
+	& influenced by remedies.css
+*/
+/* #region */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+	padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+/* Added h5 and h6 for completeness  */
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+	list-style: none;
+}
+
+/*
+	Make images easier to work with
+	Removed because its handled below in the remedies section
+*/
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/*
+	Remove all animations and transitions for people that prefer not to see them
+	NOTE: this doesn't turn-off the animation, just makes it really, really fast.
+ */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		transition-duration: 0.01ms !important;
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+
+		scroll-behavior: auto !important;
+	}
+}
+
+/* #endregion */
+/* end of Andy Bell modern reset */
+
+/*  from remedies.css (partial) */
+/* #region */
+* 1. Solid,
+thin horizontal rules * 2. Remove Firefox `color: gray` * 3. Remove default `1px` height,
+and common `overflow: hidden` */ hr {
+	border-style: solid;
+	border-width: 1px 0 0;
+	color: inherit;
+	height: 0;
+	overflow: visible;
+}
+
+/* Embedded Elements
+********************/
+
+/*
+* 1. Block display is usually what we want
+* 2. Remove strange space-below when inline
+* 3. Responsive by default
+*/
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+	display: block;
+	line-height: 0.1;
+	max-width: 100%;
+}
+
+/*
+* Maintain intrinsic aspect ratios when `max-width` is applied
+* (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+*/
+img,
+svg,
+video,
+canvas {
+	height: auto;
+}
+
+/*
+* There is no good reason elements default to 300px,
+* and audio files are unlikely to come with a width attribute
+*/
+audio {
+	width: 100%;
+}
+
+/* Old Browsers
+***************/
+
+/* Remove the border on images inside links in IE 10 and earlier */
+img {
+	border-style: none;
+}
+
+/* Hide the overflow in IE 10 and earlier */
+svg {
+	overflow: hidden;
+}
+
+/* Default block display on HTML5 elements */
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+	display: block;
+}
+
+/*
+* 1. Add the correct box sizing in IE 10
+* 2. Remove the padding in IE 10
+*/
+[type='checkbox'],
+[type='radio'] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+/* #endregion */
+
+p,
+ul,
+ol {
+	margin-bottom: 1em;
+}
+
+/* Helper classes */
+/* #region */
+/* From: Lea Verou - https://twitter.com/LeaVerou/status/1045768279753666562
+		Gets rid of the annoying outline for mouse users but preserves it for keyboard users,
+		and is ignored by browsers that don’t support :focus-visible.
+*/
+:focus:not(:focus-visible) {
+	outline: none
+}
+
+.me-hide {
+	display: none;
+}
+
+.no-css {
+	display: none;
+}
+
+#skip-frame {
+	display: flex;
+}
+
+#skip-frame a {
+	display: block;
+	position: absolute;
+	right: 0;
+	top: -5rem;
+	padding: 0.5rem 1rem 1rem;
+	font-size: 90%;
+	font-weight: bold;
+	color: white;
+	background: var(--clr-secondary-dark);
+	border-radius: 0 0 16px 16px;
+	z-index: 1;
+	transition: top 300ms ease-in-out;
+}
+
+#skip-frame a:focus {
+	top: 0;
+	transition: top 300ms ease-in-out;
+}
+
+.sr-only:not(:focus):not(:active) {
+	clip: rect(0, 0, 0, 0);
+	clip-path: inset(100%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+/* #endregion */
+
+/***** =02 Typography *****/
+/* #region */
+html {
+	overflow-y: scroll;
+	color: hsl(0, 0%, 13%);
+	font-size: 100%;
+	font-family: sans-serif;
+	line-height: 1.2;
+	/* remedies.css */
+	line-sizing: normal;
+}
+
+body {
+	font-size: 1rem;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	font-family: 'Quicksand', sans-serif;
+	font-weight: 300;
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 0.25em;
+	font-weight: bold;
+	line-height: 1.2;
+}
+
+.hed h1 {
+	margin: -8px 0 0 -3px;
+	font-size: 2.5em;
+	font-weight: 400;
+	line-height: 1;
+	letter-spacing: 2px;
+}
+
+.hed .tagline {
+	font-size: 80%;
+	font-style: italic;
+	margin-bottom: 0;
+}
+
+.tagline {
+	color: #A23319;
+}
+
+h2 {
+	font-size: 2em;
+	font-weight: 200;
+}
+
+/* From Adam Argyle - https://twitter.com/argyleink/status/1316143837903896577 */
+:is(h1, h2, h3, h4, h5, h6).tight {
+	margin-block: 0;
+}
+
+a {
+	color: #A23319;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.content-frame {
+	font-weight: 300;
+	font-size: 1.25em;
+	color: #111;
+}
+
+.page-footer {
+	font-size: 85%;
+	color: #999;
+	line-height: 1.1;
+	text-align: center;
+}
+
+@media screen and (min-width: 37.5em) {
+	.hed h1 {
+		margin: -5px 0 0 -2px;
+		font-size: 1.5em;
+		letter-spacing: 1px;
+	}
+
+	h2 {
+		font-size: 1.5em;
+	}
+}
+
+/* #endregion */
+
+/***** =03 Navigation *****/
+.nav-primary {
+	grid-row: 1;
+	grid-column: 2;
+	margin-top: 1.5em;
+	margin-right: 4vw;
+	font-weight: 400;
+	text-align: right;
+}
+
+.nav-primary li {
+	margin-bottom: 0.5em;
+}
+
+.nav-primary a {
+	padding: 0.25em 0.35em;
+}
+
+@media screen and (min-width: 37.5em) {
+	.nav-primary {
+		margin-right: 0;
+	}
+
+	.nav-primary .nav-frame {
+		display: flex;
+	}
+
+	.nav-primary li {
+		padding: 0 0.25em;
+
+	}
+}
+
+/***** =04 Layout *****/
+
+body {}
+
+.page-frame {
+	width: 100%;
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.page-header {
+	margin-bottom: 0.25em;
+	padding-top: 1em;
+	display: grid;
+	grid-template-columns: 1fr max-content;
+}
+
+.hed {
+	grid-column: 1 / -1;
+	grid-row: auto;
+}
+
+.content-frame {
+	padding: 2em 6vw 1em;
+	transition: padding 0.5s ease-in;
+}
+
+.page-footer {
+	margin-top: 1em;
+}
+
+@media screen and (min-width: 37.5em) {
+	.branding img {
+		width: 15vw;
+		max-width: 135px;
+	}
+}
+
+@media screen and (min-width: 56.25em) {
+	.content-frame {
+		padding: 2em 4.5em 1em 0;
+		transition: padding 0.5s ease-in;
+	}
+}
