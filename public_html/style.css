@@ -302,12 +302,11 @@ h6 {
 }
 
 .tagline {
-	color: #A23319;
+	color: hsl(11, 73%, 37%);
 }
 
 h2 {
 	font-size: 2em;
-
 }
 
 /* From Adam Argyle - https://twitter.com/argyleink/status/1316143837903896577 */
@@ -342,7 +341,7 @@ main details {
 
 .page-footer {
 	font-size: 85%;
-	color: #999;
+	color: hsl(11, 73%, 37%);
 	line-height: 1.1;
 	text-align: center;
 }
@@ -362,6 +361,7 @@ main details {
 /* #endregion */
 
 /***** =03 Navigation *****/
+/* #region */
 .nav-primary {
 	grid-row: 1;
 	grid-column: 2;
@@ -394,11 +394,13 @@ main details {
 	}
 }
 
+/* #endregion */
+
 /***** =04 Layout *****/
 
 .page-frame {
 	width: 100%;
-	max-width: 900px;
+	max-width: 850px;
 	margin: 0 auto;
 }
 
@@ -410,6 +412,11 @@ main details {
 	display: -ms-grid;
 	-ms-grid-columns: 1fr max-content;
 }
+
+/* .branding img {
+	width: 100%;
+	transition: width 0.5s ease-in-out;
+} */
 
 .hed {
 	grid-column: 1 / -1;
@@ -453,7 +460,7 @@ main details {
 	}
 }
 
-@media screen and (min-width: 56.25em) {
+@media screen and (min-width: 53em) {
 	.content-frame {
 		padding: 2em 4.5em 1em 0;
 		transition: padding 0.5s ease-in;
