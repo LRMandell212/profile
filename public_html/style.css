@@ -17,6 +17,10 @@ Table of Contents
 :root {
 	--clr-text-primary: #222;
 	--clr-secondary-dark: #666;
+	--clr-link: hsl(11, 73%, 37%);
+	--clr-hrule1: hsl(18, 37%, 61%);
+	--clr-hrule2: hsl(21, 40%, 55%);
+	--clr-hrule3: hsl(20, 85%, 37%);
 }
 
 /*
@@ -307,6 +311,7 @@ h6 {
 
 h2 {
 	font-size: 2em;
+	color: hsl(18, 27%, 50%);
 }
 
 /* From Adam Argyle - https://twitter.com/argyleink/status/1316143837903896577 */
@@ -316,7 +321,7 @@ h2 {
 
 a {
 	font-weight: 400;
-	color: #A23319;
+	color: hsl(11, 73%, 37%);
 	text-decoration: none;
 }
 
@@ -414,8 +419,7 @@ main details {
 }
 
 /* .branding img {
-	width: 100%;
-	transition: width 0.5s ease-in-out;
+	border: 1px solid red;
 } */
 
 .hed {
