@@ -15,14 +15,29 @@ Table of Contents
 
 /* Global vars */
 :root {
-	--clr-text-primary: #222;
-	--clr-secondary-dark: #666;
+	--clr-text-primary: hsl(8, 100%, 6%);
+	--clr-text-secondary: hsl(11, 73%, 35%);
 	--clr-link: hsl(11, 73%, 37%);
 	--clr-hrule1: hsl(18, 37%, 61%);
 	--clr-hrule2: hsl(21, 40%, 55%);
 	--clr-hrule3: hsl(20, 85%, 37%);
 }
 
+/*
+
+:root {
+  --color-50: #ffe9e4;
+  --color-100: #f9c6bb;
+  --color-200: #efa28f;
+  --color-300: #e77d64;
+  --color-400: #df5939;
+  --color-500: #c63f20;
+  --color-600: #9b3018;
+  --color-700: #702210;
+  --color-800: #441307;
+  --color-900: #1d0400;
+}
+*/
 /*
 	This reset is based on: https://hankchizljaw.com/wrote/a-modern-css-reset/
 	& influenced by remedies.css
@@ -200,6 +215,10 @@ section {
 
 /* #endregion */
 
+a img {
+	display: inline;
+}
+
 p,
 ul,
 ol {
@@ -264,7 +283,8 @@ ol {
 /* #region */
 html {
 	overflow-y: scroll;
-	color: hsl(0, 0%, 13%);
+	color: #222;
+	color: var(--clr-text-primary);
 	font-size: 100%;
 	font-family: sans-serif;
 	line-height: 1.2;
@@ -300,7 +320,7 @@ h6 {
 }
 
 .hed .tagline {
-	font-size: 80%;
+	font-size: 75%;
 	font-style: italic;
 	margin-bottom: 0;
 }
@@ -311,7 +331,11 @@ h6 {
 
 h2 {
 	font-size: 2em;
-	color: hsl(18, 27%, 50%);
+	color: var(--clr-text-secondary);
+}
+
+h4 {
+	font-weight: normal;
 }
 
 /* From Adam Argyle - https://twitter.com/argyleink/status/1316143837903896577 */
@@ -321,8 +345,12 @@ h2 {
 
 a {
 	font-weight: 400;
-	color: hsl(11, 73%, 37%);
+	color: var(--clr-link);
 	text-decoration: none;
+}
+
+a .icon-svg {
+	color: var(--clr-link);
 }
 
 a:hover {
@@ -333,6 +361,12 @@ a:hover {
 	font-weight: 300;
 	font-size: 1.25em;
 	color: #111;
+}
+
+.callout,
+.testimonial {
+	font-size: 90%;
+	color: var(--clr-text-secondary);
 }
 
 main summary,
@@ -405,7 +439,7 @@ main details {
 
 .page-frame {
 	width: 100%;
-	max-width: 850px;
+	max-width: 800px;
 	margin: 0 auto;
 }
 
@@ -445,11 +479,28 @@ main details {
 
 .content-frame {
 	padding: 2em 6vw 1em;
-	transition: padding 0.5s ease-in;
+	transition: padding 0.35s ease-in;
 }
 
 .sub-section {
 	margin-bottom: 1em;
+}
+
+.callout,
+.testimonial {
+	margin-bottom: 1em;
+	padding: 1em;
+	background-color: hsl(33, 45%, 95%);
+	border-radius: 0.5em;
+}
+
+.testimonial p:last-of-type,
+.callout p:last-child {
+	margin-bottom: 0;
+}
+
+.testimonial figcaption {
+	text-align: right;
 }
 
 .page-footer {
@@ -464,9 +515,9 @@ main details {
 	}
 }
 
-@media screen and (min-width: 53em) {
+@media screen and (min-width: 50em) {
 	.content-frame {
-		padding: 2em 4.5em 1em 0;
-		transition: padding 0.5s ease-in;
+		padding: 2em 4em 1em;
+		transition: padding 0.35s ease-in;
 	}
 }
