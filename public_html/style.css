@@ -394,9 +394,11 @@ main details {
 
 @media screen and (min-width: 37.5em) {
 	.hed h1 {
-		margin: -5px 0 0 -2px;
+		margin: -4px 0 0 -2px;
 		font-size: 1.5em;
+		font-size: clamp(1.25em, 3.25vw, 1.825em);
 		letter-spacing: 1px;
+		transition: font-size 0.25s ease;
 	}
 
 	h2 {
