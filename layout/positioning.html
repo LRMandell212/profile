@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>💻 Layout: Postioning | Lee Mandell</title>
+	<link rel="me" href="https://lrmandell212.github.io/profile/">
+
+	<style>
+		/* Basic reset */
+		/* #region */
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+
+		p,
+		ul,
+		ol {
+			margin-bottom: 1em;
+		}
+
+		/* #endregion */
+
+		/* Basic page styles */
+		/* #region */
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+			text-align: center;
+			margin: 1em;
+			padding: 1em;
+		}
+
+		h1 {
+			font-size: 1.3em;
+			font-size: clamp(1.3em, 4vw, 2.5em);
+			text-align: center;
+		}
+
+		.note h2 {
+			font-weight: lighter;
+			font-size: 1.5em;
+			font-size: clamp(1.2em, 3vw, 1.75em);
+			margin-bottom: 0.5em;
+		}
+
+		a {
+			color: hsl(11, 73%, 37%);
+		}
+
+		hr {
+			margin: 1em;
+		}
+
+		.section,
+		section {
+			margin: 1em 0;
+			padding: 1em 0.5em;
+			border: 1px dashed #999;
+		}
+
+		.section h2,
+		section h2 {
+			margin-bottom: 0.5em;
+		}
+
+		.note ul,
+		.section ul,
+		section ul {
+			margin-left: 1em;
+		}
+
+		.page-header {
+			display: flex;
+			align-items: flex-end;
+		}
+
+		.page-header img {
+			width: 15vw;
+			max-width: 135px;
+			margin-right: 1em;
+		}
+
+		.page-header h1 {
+			flex-grow: 1;
+		}
+
+		.page-header,
+		.content-frame {
+			margin-bottom: 2em;
+		}
+
+		.content-frame {
+			text-align: left;
+		}
+
+		.page-footer {
+			padding: 1em;
+			color: #666;
+			background-color: #eee;
+		}
+
+		.no-css {
+			display: none;
+		}
+
+		.note {
+			margin: 0.75em 0;
+			padding: 0.5em;
+			font-size: 85%;
+			color: #222;
+			background-color: beige;
+			border: 1px dashed #666;
+			border-radius: 0.25em;
+		}
+
+		/* #endregion */
+
+		/* Lesson styles */
+		.pos-rel {
+			position: relative;
+		}
+
+		.pos-abs {
+			position: absolute;
+		}
+
+		.ex-rel p:nth-of-type(2) {
+			left: 2em;
+			/* top: -6em; */
+			bottom: 6em;
+			background-color: rgba(204, 204, 204, 0.65);
+		}
+
+		.ex-abs p:nth-of-type(2) {
+			right: 0;
+			top: 0;
+			background-color: rgba(204, 204, 204, 0.65);
+		}
+	</style>
+</head>
+
+<body>
+	<header class="page-header">
+		<img src="https://lrmandell212.github.io/profile/img/lrm_char.gif" alt="">
+		<h1>Exploring Positioning</h1>
+		<hr class="no-css">
+	</header>
+
+	<div class="content-frame">
+		<main class="pos-rel">
+
+			<div class="note">
+				<h2>Positioning</h2>
+				<p>
+					One way to disrupt normal flow is with the CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="_blank" rel="noreferrer noopener">position</a> property.</p>
+				<p>
+					The position property takes one of five single keywords: static, relative, absolute, fixed, or sticky. By default all elements are static (normal flow). Once an elenent has been given a position property value other than static it is defined as being "positioned".
+				</p>
+				<ul>
+					<li>
+						Relatively positioned elements are offset a given amount from their normal position within the document, but without the offset affecting other elements.</li>
+					<li>
+						The absolutely positioned element is positioned relative to its nearest positioned ancestor (i.e., the nearest ancestor that is not static). An element that is absolutely positioned is taken out of the flow; thus, other elements are positioned as if it did not exist.
+					</li>
+					<li>
+						Fixed positioning is similar to absolute positioning, with the exception that the element's containing block is the initial containing block established by the viewport. This can be used to create a "floating" element that stays in the same position regardless of scrolling.
+					</li>
+					<li>
+						A stickly positioned element is treated as relatively positioned until it crosses a specified threshold, at which point it is treated as fixed until it reaches the boundary of its parent.
+					</li>
+				</ul>
+			</div>
+
+			<section class="ex-rel pos-rel">
+				<header>
+					<h2>This is the h2</h2>
+				</header>
+				<p>
+					This is the <b>first</b> <code>&lt;p&gt;</code> element. You can read more about <a href="https://en.wikipedia.org/wiki/HTML_element#Block_elements" target="_blank" rel="noreferrer noopener">block</a> and <a href="https://en.wikipedia.org/wiki/HTML_element#Inline_elements" target="_blank" rel="noreferrer noopener">inline</a> element on Wikipedia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero fuga qui, ratione expedita eveniet at iusto ipsam quae minus nesciunt voluptate architecto aliquid soluta dignissimos earum incidunt illum temporibus porro?
+				</p>
+				<p class="pos-rel">
+					This is the <i>second</i> <code>&lt;p&gt;</code> element. I am "postion: relative" with a top of "-6em" and a left of "1em".
+				</p>
+
+				<p>
+					This is a <b>third</b> <code>&lt;p&gt;</code> element. I have a default static position. Notice I'm where I would be if the second p element was not positioned relatively.
+				</p>
+			</section>
+
+			<div class="note">
+				<p>
+					The question with "position: absolute" is absolutly positioned in relation to what. Remember the absolutely positioned element is positioned relative to its nearest positioned ancestor. In the example below I have set the positioning on the section element to position relative <b>without</b> changing the top or left values - this served to "position" the element for CSS technical purposes without changing is position on the screen. Because CSS now considers the section element to be "positioned" the absolutely positioned p element is placed relative to it.
+				</p>
+
+			</div>
+
+			<section class="ex-abs">
+				<header>
+					<h2>This is the h2</h2>
+				</header>
+				<p>
+					This is the <b>first</b> <code>&lt;p&gt;</code> element. You can read more about <a href="https://en.wikipedia.org/wiki/HTML_element#Block_elements" target="_blank" rel="noreferrer noopener">block</a> and <a href="https://en.wikipedia.org/wiki/HTML_element#Inline_elements" target="_blank" rel="noreferrer noopener">inline</a> element on Wikipedia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero fuga qui, ratione expedita eveniet at iusto ipsam quae minus nesciunt voluptate architecto aliquid soluta dignissimos earum incidunt illum temporibus porro?
+				</p>
+				<p class="pos-abs">
+					This is the <i>second</i> <code>&lt;p&gt;</code> element. I am "postion: absolute" with a top of "0" and a right of "0" .
+				</p>
+
+				<p>
+					This is a <b>third</b> <code>&lt;p&gt;</code> element. I have a default static position. Notice I'm where I would be if the second p element was not positioned relatively.
+				</p>
+			</section>
+
+		</main>
+	</div>
+
+	<footer class="page-footer">
+		<hr class="no-css">
+		<small>© 2020&ndash;2021 <a href="https://lrmandell212.github.io/profile/" target="_blank" rel="noreferrer noopener">Lee Mandell 🧔</a>‍</small>
+	</footer>
+</body>
+
+</html>
