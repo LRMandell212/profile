@@ -119,4 +119,14 @@
 			border-radius: 0.25em;
 		}
 
+		code.callout {
+			display: block;
+			margin: 0.5em 1em;
+		}
+
+		pre code {
+			-moz-tab-size: 4;
+			tab-size: 4;
+		}
+
 		/* #endregion */
