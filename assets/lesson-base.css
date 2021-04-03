@@ -74,22 +74,21 @@
 		}
 
 		.page-header {
-			position: relative;
+			display: grid;
+			grid-template-columns: max(15vw, 135px) 1fr;
 		}
 
 		.page-header img {
-			width: 15vw;
-			max-width: 135px;
+			grid-column: 1 / 2;
+			grid-row: 1 / 2;
 			margin-right: 1em;
 		}
 
-		.page-header h1 {
-			width: 100%;
-			position: absolute;
-			left: 0;
-			bottom: 0;
-			text-align: center;
+		.page-header .title-block {
+			grid-column: 1 / -1;
+			grid-row: 1 / 2;
 		}
+
 
 		.page-header,
 		.content-frame {
