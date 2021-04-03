@@ -20,15 +20,16 @@ ol {
 
 /* #endregion */
 
-/* Basic page styles */
+/* Typography */
 /* #region */
+
+html {
+	font-size: 1--%;
+}
+
 body {
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	text-align: center;
-	width: 100%;
-	max-width: 57.25em;
-	margin: 1em auto;
-	padding: 1em;
 }
 
 h1,
@@ -60,6 +61,24 @@ h1 {
 
 a {
 	color: hsl(11, 73%, 37%);
+}
+
+.note {
+	font-size: 95%;
+	line-height: 1.4;
+	color: #222;
+}
+
+/* #endregion */
+
+
+/* Layout */
+/* #region */
+body {
+	width: 100%;
+	max-width: 57.25em;
+	margin: 1em auto;
+	padding: 1em;
 }
 
 hr {
@@ -115,6 +134,14 @@ section ul {
 
 .content-frame {
 	text-align: left;
+}
+
+.note {
+	margin: 0.75em 0;
+	padding: 0.75em;
+	background-color: beige;
+	border: 1px dashed #666;
+	border-radius: 0.25em;
 }
 
 .page-footer {
