@@ -144,6 +144,17 @@ section ul {
 	border-radius: 0.25em;
 }
 
+.note figure {
+	padding: 1em;
+	background-color: #fefefe;
+	border-left: 3px solid #ccc;
+}
+
+.note figcaption {
+	margin-top: 1em;
+	text-align: right;
+}
+
 .page-footer {
 	padding: 1em;
 	color: #666;
