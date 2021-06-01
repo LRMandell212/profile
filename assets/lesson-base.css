@@ -145,6 +145,7 @@ section ul {
 }
 
 .note figure {
+	margin-bottom: 1em;
 	padding: 1em;
 	background-color: #fefefe;
 	border-left: 3px solid #ccc;
