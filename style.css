@@ -442,7 +442,7 @@ main details li {
 /* #endregion */
 
 /***** =04 Layout *****/
-
+/* #region */
 .page-frame {
 	width: 100%;
 	max-width: 800px;
@@ -523,3 +523,4 @@ section section {
 		transition: padding 0.35s ease-in;
 	}
 }
+/* #endregion */
