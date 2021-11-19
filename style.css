@@ -287,8 +287,6 @@ html {
 	font-size: 100%;
 	font-family: sans-serif;
 	line-height: 1.2;
-	/* remedies.css */
-	line-sizing: normal;
 }
 
 body {
@@ -297,7 +295,6 @@ body {
 	font-family: 'Quicksand', sans-serif;
 	font-weight: 300;
 	line-height: 1.5;
-
 }
 
 h1,
@@ -381,6 +378,10 @@ main details {
 	margin-bottom: 0.5em;
 }
 
+main details li {
+	line-height: 1.35;
+	padding-bottom: 0.5em;
+}
 .page-footer {
 	font-size: 85%;
 	color: hsl(11, 73%, 37%);
