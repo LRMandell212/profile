@@ -227,8 +227,7 @@ ol {
 .no-css {
 	display: none;
 }
-
-.offsite::after {
+a[rel="noreferrer noopener"]::after {
 	content: url('data:image/svg+xml; utf8, <svg width="1em" height="1em" class="icon-svg" fill="none" stroke="brown" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc"> <title>External link icon</title> <desc id="desc">box with an arrow pointing to the upper right</desc> <path id="icon-ext-link" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>');
 	margin-left: 0.15em;
 	white-space: nowrap;
