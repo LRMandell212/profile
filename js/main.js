@@ -3,19 +3,21 @@
 * Author: Lee Mandell
 */
 
-console.log('aloha');
-//alert( 'aloha' );
+console.log('Aloha');
 
-/*********************
-	Function definitions
-*********************/
-function setup() {
-	'use strict';
+// ***** GLOBALS
 
+
+// ***** FUNCTION DEFINITIONS
+
+function updateCopyright() {
+  const elCopyrightDate = document.querySelector('.copyright span');
+  const myDate = new Date();
+
+  elCopyrightDate.innerHTML = `&thinsp;&ndash;&thinsp;${myDate.getFullYear()}`;
+  elCopyrightDate.removeAttribute('hidden');
 }
 
+// ***** ON PAGE LOAD
 
-/*********************
-	Run
-*********************/
-setup();
+updateCopyright();
