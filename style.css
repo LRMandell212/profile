@@ -277,15 +277,11 @@ a[rel="noreferrer noopener"]::after {
 	transition: top 300ms ease-in-out;
 }
 
-a span.sr-only {
+a span.visually-hidden {
 	display: none;
 }
 
-/* a:focus span {
-	display: inline;
-} */
-
-.sr-only {
+.visually-hidden {
 	clip: rect(0, 0, 0, 0);
 	clip-path: inset(100%);
 	height: 1px;
