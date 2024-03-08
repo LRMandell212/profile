@@ -14,7 +14,7 @@ Table of Contents
 /***** =01 Reset/Global Defaults *****/
 /* Global vars */
 :root {
-	--clr-text-primary: hsl(8, 100%, 6%);
+	--clr-text-primary: hsl(10, 100%, 5%);
 	--clr-text-secondary: hsl(11, 73%, 35%);
 	--clr-text-secondary-translucent: hsl(11, 73%, 35%, 0.7);
 	--clr-link: hsl(11, 73%, 37%);
